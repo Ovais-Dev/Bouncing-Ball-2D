@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74a74e6a87a57c24c9bf4c9fe0e3c2e9, type: 3}
+  m_Name: Blue Mountain
+  m_EditorClassIdentifier: 
+  themeName: Blue Mountain
+  unlocked: 1
+  layer1Color: {r: 0, g: 0.098039225, b: 0.18823531, a: 1}
+  layer2Color: {r: 0.03529412, g: 0.35686275, b: 0.6509804, a: 1}
+  layer3Color: {r: 0, g: 0.53333336, b: 1, a: 1}
+  layer4Color: {r: 0.40000004, g: 0.72156864, b: 1, a: 1}
+  layer5Color: {r: 0.74509805, g: 0.85098046, b: 0.9450981, a: 1}
+  layer6Color: {r: 0.882353, g: 0.9450981, b: 1, a: 1}
+  layer7Color: {r: 0.93725497, g: 0.9725491, b: 1, a: 1}
+  ballColor: {r: 1, g: 0.22352943, b: 0.5686275, a: 1}
+  trail1Color: {r: 1, g: 0.48627454, b: 0.6784314, a: 1}
+  trail2Color: {r: 0.9803922, g: 0.9803922, b: 0.9803922, a: 1}
+  shootEffectColor: {r: 1, g: 0.504717, b: 0.7248429, a: 1}
+  hitEffetColor: {r: 0.2494215, g: 0.58724326, b: 0.8962264, a: 1}
+  uiColor: {r: 0.2756764, g: 0.6588199, b: 0.990566, a: 1}
+  mainBGColor: {r: 0, g: 0.53333336, b: 1, a: 1}
+  uiBg1Color: {r: 0.22352943, g: 0.6392157, b: 1, a: 1}
+  uiBg2Color: {r: 0.57254905, g: 0.78823537, b: 0.9725491, a: 1}
