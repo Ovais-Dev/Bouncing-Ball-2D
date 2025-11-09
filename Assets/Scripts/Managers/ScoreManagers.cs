@@ -21,8 +21,6 @@ public class ScoreManagers : MonoBehaviour
 
 
     [SerializeField] Text scoreText;
-    [SerializeField] Text[] allScoreTexts;
-    [SerializeField] Text[] allHighScoreTexts;
 
 
     int score = 0;
@@ -32,7 +30,7 @@ public class ScoreManagers : MonoBehaviour
     private void Start()
     {
         GameManager.Instance.playAction += ResetScore;
-        GameManager.Instance.gameOverAction += ()=> { SaveScore();UpdateAllScoreText(); scoreText.text = ""; };
+        GameManager.Instance.gameOverAction += ()=> { SaveScore(); scoreText.text = ""; };
         UIManager.Instance.settingsAction += () => { scoreText.text = ""; };
         UIManager.Instance.extrasAction += () => { scoreText.text = ""; };
         UIManager.Instance.exitAction += () => { scoreText.text = ""; };
@@ -53,20 +51,9 @@ public class ScoreManagers : MonoBehaviour
         if (score >= highestScore)
         {
             PlayerPrefs.SetInt("HighestScore", score);
+            highestScore = score;
         }
     }
-    void UpdateAllScoreText()
-    {
-        foreach (var scText in allScoreTexts)
-        {
-            scText.text = score.ToString();
-        }
-        foreach(var hsText in allHighScoreTexts)
-        {
-            hsText.text = highestScore.ToString();
-        }
-    }
-    
     public void IncrementScore(int amt = 1)
     {
         score += amt;

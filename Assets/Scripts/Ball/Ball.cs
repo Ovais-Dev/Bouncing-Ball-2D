@@ -38,7 +38,7 @@ public class Ball : MonoBehaviour
     private void OnEnable()
     {
         //start coroutine for coming from below and jump
-        StartCoroutine(ComingUpTransition());
+        StartCoroutine(MovingUpTransition());
     }
 
     // Update is called once per frame
@@ -70,7 +70,7 @@ public class Ball : MonoBehaviour
         shootEffect.effect.Play();
         SoundManager.Instance.PlayClip("Bounce");
     }
-    IEnumerator ComingUpTransition()
+    IEnumerator MovingUpTransition()
     {
         float elapsedTime = 0;
         float duration = 0.4f;
@@ -96,7 +96,6 @@ public class Ball : MonoBehaviour
     public void UpgradeEffect()
     {
         upgradeEffect.effect.Play();
-        Instantiate(distortionEffect, transform.position, Quaternion.identity);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -107,8 +106,11 @@ public class Ball : MonoBehaviour
         //}
         if (collision.collider.CompareTag("Obstacle"))
         {
-            if(destroyEffect!=null)
+            if (destroyEffect != null)
+            {
                 Instantiate(destroyEffect, transform.position, Quaternion.identity);
+                Instantiate(distortionEffect, transform.position, Quaternion.identity);
+            }
            SoundManager.Instance.PlayClip("Smash");
             GameManager.Instance.GameOver();
             return;

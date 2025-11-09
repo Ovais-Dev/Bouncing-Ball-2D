@@ -52,9 +52,12 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) )
         {
-            Pause();
+            if (gmState == GameState.Play)
+                Pause();
+            else if (gmState == GameState.Menu) UIManager.Instance.OnExit();
+            
         }
     }
     void InitialSettings()

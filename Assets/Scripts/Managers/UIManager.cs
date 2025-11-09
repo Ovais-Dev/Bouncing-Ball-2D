@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] List<PanelObject> panelObjects;
 
     GameObject gameoverPanel;
-
+    bool exitOpen = false;
     // Start is called before the first frame update
     void Awake()
     {
@@ -40,6 +40,7 @@ public class UIManager : MonoBehaviour
         {
             DisablePanel("Exit",true);
             DisablePanel("Menu");
+            exitOpen = false;
         };
         settingsAction += () =>
         {
@@ -75,6 +76,7 @@ public class UIManager : MonoBehaviour
             DisablePanel("PauseButton");
             DisablePanel("Pause");
             DisablePanel("LevelDenoter");
+            exitOpen = false;
         };
 
        
@@ -93,7 +95,7 @@ public class UIManager : MonoBehaviour
 
     public void Setting() => settingsAction?.Invoke();
     public void Extras() => extrasAction?.Invoke();
-    public void OnExit() => exitAction?.Invoke();
+    public void OnExit() { if (exitOpen) GameManager.Instance.Menu(); else exitAction?.Invoke(); }
 
     public void DisablePanel(string name,bool activate = false)
     {
